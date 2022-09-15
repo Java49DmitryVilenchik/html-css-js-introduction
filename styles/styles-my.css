@@ -1,10 +1,11 @@
-.logo {font-size: 3em;}
+.logo {font-size: 1.5em;}
 .main-class {}
 .details-container {}
-.details-image {width: 180px; height: 120px;}
+.details-image {width: 360px; height: 240px;}
 .details-title {display: block;}
 .thumbnails-list {list-style: none;}
 .thumbnails-item {}
-.thumbnails-image {}
+.thumbnails-image {width: 180px; height: auto;}
+
 .thumbnails-title {display: block;}
-.thumbnails-anchor {}
+.thumbnails-anchor {text-decoration: none;}
