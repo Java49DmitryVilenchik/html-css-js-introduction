@@ -1,17 +1,28 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: azure;
+}
 .logo {
-    font-size: 1.5em;
+    font-size: 2em;
+    background-color: bisque;
+    display: block;
+    text-align: center;
 }
 .main-class {
 
 }
 .details-container {
-
+    display: flex;
+    flex-direction: column;
 }
 .details-image {
-
+    width: 70vw;
+    height: 60vw;
 }
 .details-title {
     display: block;
+    
 }
 .thumbnails-list {
     list-style: none;
@@ -21,11 +32,13 @@
 
 }
 .thumbnails-image {
-
+    width: 20vw;
+    height: 15vw;
 }
 .thumbnails-title {
     display: block;
+    text-align: center;
 }
 .thumbnails-anchor {
-
+    text-decoration: none;
 }
