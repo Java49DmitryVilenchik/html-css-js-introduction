@@ -43,10 +43,12 @@ body {
     height: 20vw;
     margin-top: 2.5vh;
     border: solid 1px black;
+    
 }
 .thumbnails-image {
     width: 20vw;
     height: 15vw;
+    display: block;
 }
 .thumbnails-title {
     display: block;
