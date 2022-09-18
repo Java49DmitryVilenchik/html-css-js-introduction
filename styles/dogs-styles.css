@@ -29,7 +29,8 @@ body {
 
 }
 .thumbnails-item {
-
+    width: 20vw;
+    height: 20vw;
 }
 .thumbnails-image {
     width: 20vw;
@@ -38,6 +39,7 @@ body {
 .thumbnails-title {
     display: block;
     text-align: center;
+    height: 5vw;
 }
 .thumbnails-anchor {
     text-decoration: none;
