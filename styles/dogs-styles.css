@@ -44,11 +44,13 @@ body {
     margin-top: 2.5vh;
     border: solid 1px black;
     
+    
 }
 .thumbnails-image {
     width: 20vw;
     height: 15vw;
     display: block;
+    border-radius: 25%;
 }
 .thumbnails-title {
     display: block;
