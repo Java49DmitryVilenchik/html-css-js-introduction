@@ -111,10 +111,25 @@ body {
     }
     .details-image {
         width: 45vw;
-        height: 38vw;
+        height: 35vw;
     }
     .details-container {
-        margin-top: 3vh;
-        margin-bottom: 3vh;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+        justify-content: center;
+    }
+    @media (min-width: 900px) {        
+        .thumbnails-item {
+            max-width: calc(var(--thumbnails-image-width)/2.2);
+            min-height: calc(var(--thumbnails-image-height)/2.5 + var(--thumbnails-title-height)/2.5);
+            
+            margin-top: 2vh;
+            margin-right: 10vh
+
+        }
+        .thumbnails-image {
+            width: 100%;
+            height: calc(var(--thumbnails-img-height)/2.5);
+        }
     }
 }
