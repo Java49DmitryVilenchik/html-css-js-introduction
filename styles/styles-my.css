@@ -100,8 +100,10 @@ body {
         margin-right: 4vh;
     }
     .thumbnails-image {
-        width: cal(var(--thumbnails-image-width)/1.7);
+        /*width: cal(var(--thumbnails-image-width)/2);*/
         height: calc(var(--thumbnails-image-height)/2);
+        width: 100%;       
+        /*height: 100%;*/
     }
     .main-class {
         flex-direction: row;
