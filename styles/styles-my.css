@@ -84,24 +84,29 @@ body {
     text-decoration: none;
 }
 @media (min-width: 560px) {
+    :root {
+        --thumbnails-image-width: 12vw;
+        --thumbnails-image-height: 7.5vw;
+        --thumbnails-title-height: calc(var(--thumbnails-image-height) * 0.25);
+    }
     .thumbnails-list {
         flex-direction: column;
         flex-wrap: nowrap;
         margin-top: 0%;
         margin-bottom: 2vh;
-        max-height: 83vh;
+        max-height: 88vh;
         order: -1;
         justify-content: flex-start;
     }
     .thumbnails-item {
-        max-width: calc(var(--thumbnails-image-width)/1.7);
-        min-height: calc(var(--thumbnails-image-height)/2 + var(--thumbnails-title-height)/2);
+        max-width: var(--thumbnails-image-width);
+        min-height: calc(var(--thumbnails-image-height) + var(--thumbnails-title-height));
         margin-top: 2vh;
         margin-right: 2vh;
     }
     .thumbnails-image {
-        width: cal(var(--thumbnails-image-width)/1.7);
-        height: calc(var(--thumbnails-image-height)/2);
+        width: var(--thumbnails-image-width);
+        height: var(--thumbnails-image-height);
         
     }
     .main-class {
@@ -117,17 +122,22 @@ body {
         margin-bottom: 2vh;
         justify-content: top;
     }
-    @media (min-width: 900px) {        
+    @media (min-width: 900px) {
+        :root {
+            --thumbnails-image-width: 9vw;
+            --thumbnails-image-height: 7vw;
+            --thumbnails-title-height: calc(var(--thumbnails-image-height) * 0.25);
+        }        
         .thumbnails-item {
-            max-width: calc(var(--thumbnails-image-width)/2.2);
-            min-height: calc(var(--thumbnails-image-height)/2.5 + var(--thumbnails-title-height)/2.5);            
+            max-width: var(--thumbnails-image-width);
+            min-height: calc(var(--thumbnails-image-height) + var(--thumbnails-title-height));            
             margin-top: 2vh;
             margin-right: 2vh
 
         }
         .thumbnails-image {
-            width: calc(var(--thumbnails-image-width)/2.2);
-            height: calc(var(--thumbnails-image-height)/2.5);
+            width: calc(var(--thumbnails-image-width));
+            height: calc(var(--thumbnails-image-height));
 
         }
         .details-image {
