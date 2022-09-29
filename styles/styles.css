@@ -1,0 +1,46 @@
+.cell-white {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    display: inline-block;
+    border: solid 1px;
+    float: left;
+    
+  }
+  .cell-black {
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    display: inline-block;
+    border: solid 1px;
+    float: left;
+  }
+  .body, html {
+    height: 100%;
+  }
+  .body {
+    display: flex;  
+    /*flex-direction: row;*/
+    justify-content: center;
+    flex-grow: 1;
+    align-items: center;
+    
+    /*margin: 0;*/
+  }
+  
+  .board {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    align-items: center;
+  }
+  .board-row {
+    
+    /*margin-left: 20%;*/
+
+  }
+  .board {
+    /*margin-top: 50%;*/
+  }
+  
