@@ -1,6 +1,10 @@
+:root {
+  --cell-width: 6vw;
+  --cell-height: 6vw;
+}
 .cell-white {
-    width: 20px;
-    height: 20px;
+    width: var(--cell-width);
+    height: var(--cell-height);
     background-color: white;
     display: inline-block;
     border: solid 1px;
@@ -8,8 +12,8 @@
     
   }
   .cell-black {
-    width: 20px;
-    height: 20px;
+    width: var(--cell-width);
+    height: var(--cell-height);
     background-color: black;
     display: inline-block;
     border: solid 1px;
@@ -19,28 +23,51 @@
     height: 100%;
   }
   .body {
-    display: flex;  
-    /*flex-direction: row;*/
+    display: flex;      
+    flex-direction: column;
     justify-content: center;
-    flex-grow: 1;
     align-items: center;
-    
-    /*margin: 0;*/
+    margin: 0;
   }
-  
+  .html {
+    position: relative;
+    height: 740px;
+  }
   .board {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    flex-grow: 1;
+    justify-content: center;   
     align-items: center;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: calc(var(--cell-height) * 8);
+    margin: auto;
+
   }
   .board-row {
     
-    /*margin-left: 20%;*/
-
-  }
-  .board {
-    /*margin-top: 50%;*/
+    display: flex;
+    flex-direction: row;   
+    
+    
   }
   
+  @media(min-width: 560px) {
+    :root {
+      --cell-width: 4vw;
+      --cell-height: 4vw;
+    }
+    
+  } 
+  @media(min-width: 900px) {
+    :root {
+      --cell-width: 4vw;
+      --cell-height: 4vw;
+    }
+    
+  } 
