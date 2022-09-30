@@ -11,7 +11,8 @@
 :root {
     --thumbnails-img-width: 20vw;
     --thumbnails-img-height: 15vw;
-    --thumbnails-title-height: calc(var(--thumbnails-img-height)* 0.33)
+    --thumbnails-title-height: calc(var(--thumbnails-img-height) * 0.33);
+    
 }
 
 body,
@@ -55,19 +56,27 @@ body {
 }
 
 .details-image {
+   
     width: 90vw;
     height: 70vw;
     border-radius: 25%;
 
 }
+.details-container:hover {
+    transform: scale(1.1);
+    margin-left: 1vw;
+}
 
 .details-title {
+    
     display: block;
     font-family: airstream;
     font-style: italic;
+    font-size: 2em;
     background-color: beige;
     position: absolute;
-    left: 3vw;
+   
+    left: 6vw;
     bottom: 2vw;
 }
 
