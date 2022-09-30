@@ -112,6 +112,7 @@ body {
     text-align: center;
     height: var(--thumbnails-title-height);
     background-color: beige;
+    font-size: 70%;
 }
 
 .thumbnails-anchor {
@@ -131,7 +132,7 @@ body {
     .logo {
         font-size: 1.8em;
     }
-
+    .thumbnails-title {font-size: 70%;}
     .thumbnails-list {
         flex-direction: column;
         flex-wrap: nowrap;
