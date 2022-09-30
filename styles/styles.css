@@ -1,6 +1,6 @@
 :root {
-  --cell-width: 6vw;
-  --cell-height: 6vw;
+  --cell-width: 4vw;
+  --cell-height: 4vw;
 }
 .cell-white {
     width: var(--cell-width);
