@@ -51,10 +51,13 @@ body {
     flex-direction: column;
     align-items: center;
     margin-bottom: 10vh;
-    position: relative;
+    /*position: relative; */
+   
 
 }
-
+.details-frame {
+    position: relative;
+}
 .details-image {
    
     width: 90vw;
@@ -76,7 +79,7 @@ body {
     background-color: beige;
     position: absolute;
    
-    left: 6vw;
+    left: 0;
     bottom: 2vw;
 }
 
@@ -153,7 +156,7 @@ body {
     }
     .details-image {
         width: 45vw;
-        height: 38vw;
+        height: 35vw;
     }
 
     .details-container {
@@ -170,7 +173,7 @@ body {
         }
 
         .thumbnails-title {
-            font-size: 1.5em;
+            font-size: 0.9em;
         }
 
         .details-container {
@@ -181,8 +184,8 @@ body {
         
 
         .details-title {
-            font-size: 1.5em;
-            bottom: 9vw;
+            font-size: 2em;
+           /* bottom: 9vw;*/
         }
 
         .details-image {
