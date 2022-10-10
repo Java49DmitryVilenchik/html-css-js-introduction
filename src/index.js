@@ -19,5 +19,9 @@ detailsImage.addEventListener("click", function() { /*   my cod     */
     alert("on click details image");
     
     /*window.location.href="https://en.wikipedia.org/wiki/Money";*/
-    window.open("https://en.wikipedia.org/wiki/Money","_blank");
+    let a=detailsTitle.innerHTML;
+    alert(a);
+    if (a=="Electrum coin")
+    window.open("https://en.wikipedia.org/wiki/Stater","_blank");
+    else window.open("https://en.wikipedia.org/wiki/Money","_blank");
 })
