@@ -1,9 +1,8 @@
-alert("Warning! Working JavaScript!");
+/*alert("Warning! Working JavaScript!");*/
 const anchors=document.querySelectorAll(".thumbnails-anchor");
 const detailsImage=document.querySelector(".details-image");
 const detailsTitle=document.querySelector(".details-title");
-
-const detailsAnchor=document.querySelectorAll(".details-anc");  /*  my cod  */
+/*const detailsAnchor=document.querySelectorAll(".details-anc");  /*  my cod  */
 
 function setDetails(anchor) {
     detailsImage.setAttribute("src", anchor.getAttribute('data-details-image'));
@@ -15,13 +14,24 @@ for(let i=0; i<anchors.length; i++) {
         setDetails(anchors[i]);
     })
 }
-detailsImage.addEventListener("click", function() { /*   my cod     */
-    alert("on click details image");
-    
-    /*window.location.href="https://en.wikipedia.org/wiki/Money";*/
+detailsImage.addEventListener("click", function() { /*   my cod     */    
     let a=detailsTitle.innerHTML;
-    alert(a);
-    if (a=="Electrum coin")
-    window.open("https://en.wikipedia.org/wiki/Stater","_blank");
-    else window.open("https://en.wikipedia.org/wiki/Money","_blank");
+    console.log(a);
+    switch(a) {
+        case "Electrum coin":
+            window.open("https://en.wikipedia.org/wiki/Stater","_blank");
+            break;
+        case "Gold sovereign":
+            window.open("https://en.wikipedia.org/wiki/Sovereign_(British_coin)","_blank");
+            break;
+        case "Gold coins":
+            window.open("https://en.wikipedia.org/wiki/Coin","_blank");
+            break;
+        case "Banknotes":
+            window.open("https://en.wikipedia.org/wiki/Banknote","_blank");
+            break;
+        default:
+            window.open("https://en.wikipedia.org/wiki/Money","_blank");         
+    }
+   
 })
