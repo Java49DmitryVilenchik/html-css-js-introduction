@@ -2,7 +2,8 @@
 const anchors=document.querySelectorAll(".thumbnails-anchor");
 const detailsImage=document.querySelector(".details-image");
 const detailsTitle=document.querySelector(".details-title");
-/*const detailsAnchor=document.querySelectorAll(".details-anc");  /*  my cod  */
+
+const detailsAnchor=document.querySelector(".details-frame"); /*  my cod  */
 
 function setDetails(anchor) {
     detailsImage.setAttribute("src", anchor.getAttribute('data-details-image'));
@@ -14,8 +15,10 @@ for(let i=0; i<anchors.length; i++) {
         setDetails(anchors[i]);
     })
 }
-detailsImage.addEventListener("click", function() { /*   my cod     */    
+detailsAnchor.addEventListener("click", function() { /*   my cod     */  
+
     let a=detailsTitle.innerHTML;
+   
     console.log(a);
     switch(a) {
         case "Electrum coin":
