@@ -3,7 +3,7 @@ const anchors=document.querySelectorAll(".thumbnails-anchor");
 const detailsImage=document.querySelector(".details-image");
 const detailsTitle=document.querySelector(".details-title");
 
-const detailsAnchor=document.querySelector(".details-frame"); /*  my cod  */
+const detailsFrame=document.querySelector(".details-frame"); /*  my cod  */
 
 function setDetails(anchor) {
     detailsImage.setAttribute("src", anchor.getAttribute('data-details-image'));
@@ -15,7 +15,7 @@ for(let i=0; i<anchors.length; i++) {
         setDetails(anchors[i]);
     })
 }
-detailsAnchor.addEventListener("click", function() { /*   my cod     */  
+detailsFrame.addEventListener("click", function() { /*   my cod     */  
 
     let a=detailsTitle.innerHTML;
    
