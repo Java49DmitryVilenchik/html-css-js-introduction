@@ -74,6 +74,7 @@ body {
     position: absolute;
     top: 3vh;
     right: 3vw;
+    
 }
 
 .details-image {
@@ -166,12 +167,29 @@ body {
         order: -1;
         justify-content: flex-start;
     }
+    .hidden .thumbnails-list {
+       list-style: none;
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-height: 30vh;
+        overflow-y: visible; 
+        justify-content:center;
+    }
 
     .main-class {
         flex-direction: row;
         justify-content: space-around;
 
     }
+
+    .main-class.hidden {
+        --thumbnails-img-width: 10vw;
+        --thumbnails-img-height: 7vw;
+        --thumbnails-title-height: calc(var(--thumbnails-img-height)* 0.33);
+        
+    }
+
     .details-title {
         font-size: 1.5em;
         left: 0;
