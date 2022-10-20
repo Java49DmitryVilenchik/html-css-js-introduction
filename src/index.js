@@ -5,6 +5,9 @@ const detailsTitle=document.querySelector(".details-title");
 
 const detailsFrame=document.querySelector(".details-frame"); /*  my cod  */
 
+const mainClass = document.querySelector(".main-class");
+const HIDDEN = "hidden";
+
 function setDetails(anchor) {
     detailsImage.setAttribute("src", anchor.getAttribute('data-details-image'));
     detailsTitle.innerHTML=anchor.getAttribute('data-details-title');
@@ -12,6 +15,7 @@ function setDetails(anchor) {
 for(let i=0; i<anchors.length; i++) {
     anchors[i].addEventListener("click", function() {
         console.log("on click", anchors[i]);
+        showDetails();
         setDetails(anchors[i]);
     })
 }
@@ -38,3 +42,10 @@ detailsFrame.addEventListener("click", function() { /*   my cod     */
     }
    
 })
+
+function showDetails() {
+    mainClass.classList.remove(HIDDEN);
+}
+function hideDetails() {
+    mainClass.classList.add(HIDDEN);
+}
