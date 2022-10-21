@@ -49,7 +49,7 @@ body {
 .main-class.hidden {
     --thumbnails-img-width: 35vw;
     --thumbnails-img-height: 25vw;
-    --thumbnails-title-height: calc(var(--thumbnails-img-height)* 0.33) 
+    --thumbnails-title-height: calc(var(--thumbnails-img-height)* 0.4) 
 }
 
 
@@ -143,6 +143,7 @@ body {
     font-size: 70%;
 }
 
+
 .thumbnails-anchor {
     text-decoration: none;
 }
@@ -154,7 +155,7 @@ body {
     :root {
         --thumbnails-img-width: 12vw;
         --thumbnails-img-height: 8vw;
-        --thumbnails-title-height: calc(var(--thumbnails-img-height)* 0.25)
+        --thumbnails-title-height: calc(var(--thumbnails-img-height)* 0.33)
     }
 
     .logo {
