@@ -34,8 +34,7 @@ function showDetails() {
     
 }
 function hideDetails() {
-    detailsAnchor.setAttribute("details-url", "#");
-    
+    detailsAnchor.setAttribute("details-url", "#");        
     mainClass.classList.add(HIDDEN);
-    
+    window.close();
 }
