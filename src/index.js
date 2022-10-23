@@ -28,8 +28,14 @@ detailsFrame.addEventListener("click", function() { /*   my cod     */
 })
 
 function showDetails() {
+    detailsAnchor.setAttribute("details-url", "#");
+    
     mainClass.classList.remove(HIDDEN);
+    
 }
 function hideDetails() {
+    detailsAnchor.setAttribute("details-url", "#");
+    
     mainClass.classList.add(HIDDEN);
+    
 }

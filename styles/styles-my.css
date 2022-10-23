@@ -72,8 +72,8 @@ body {
 
 .hide-button {
     position: absolute;
-    top: 10vh;
-    right: 5vw;
+    top: 2vw;
+    right: 1vw;
     height: 30px;
     width: 80px;
 }
@@ -229,7 +229,7 @@ body {
         .hidden .thumbnails-item:hover {
             transform: scale(0.9);
             margin-left: 1vw;
-
+        }
         .thumbnails-title {
             font-size: 0.9em;
         }
@@ -252,4 +252,3 @@ body {
         }
 
     }
-}
