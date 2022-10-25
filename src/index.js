@@ -21,8 +21,10 @@ function setDetails(anchor) {
 for(let i=0; i<anchors.length; i++) {
     anchors[i].addEventListener("click", function() {
         console.log("on click", anchors[i]);
-        showDetails();
+        
         setDetails(anchors[i]);
+        showDetails();
+
         detailsAudio.play();    /* my  */
         setTimeout(function() {
             detailsAudio.pause();
@@ -30,14 +32,13 @@ for(let i=0; i<anchors.length; i++) {
     })    
 }
 detailsFrame.addEventListener("click", function() { /*   my cod     */  
-    
+    detailsAudio.pause();    
     window.open(detailsAnchor.getAttribute('details-url'));   
    
 })
 
 function showDetails() {
-    detailsAnchor.setAttribute("details-url", "#");
-    
+       
     mainClass.classList.remove(HIDDEN);
     detailsContainer.classList.add(IS_POINT);
     setTimeout(function() {
@@ -46,8 +47,7 @@ function showDetails() {
 
 }
 function hideDetails() {
-    detailsAnchor.setAttribute("details-url", "#");     
-    mainClass.classList.add(HIDDEN);
-   
-    window.close();   /*my code -clouse url when press btn hide (it-s not very good) */
+    detailsAnchor.setAttribute("details-url", "#"); 
+    detailsAudio.pause();    
+    mainClass.classList.add(HIDDEN);       
 }
