@@ -3,7 +3,7 @@ function sumDigits(number) {
     let sum=0;
     do {
         let i=number % 10;
-        sum=sum+i;
+        sum+=i;
         number=Math.trunc(number/10);
     }while(number!=0);
     return sum;
