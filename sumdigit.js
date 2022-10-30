@@ -1,5 +1,6 @@
 function sumDigits(number) {
     if (number<0) {number=-number};
+    /* or number=Math.abs(number)  */
     if (number%1!=0) {
         
         do {          
@@ -12,6 +13,7 @@ function sumDigits(number) {
         let i=number % 10;
         sum+=i;
         number=Math.trunc(number/10);
+        /* or number=(number-i)/10 */
     }while(number!=0);
     return sum;
 }
