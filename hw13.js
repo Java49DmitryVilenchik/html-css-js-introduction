@@ -15,8 +15,8 @@ function checkTeudatZehut(teudatStrNumber) {
     return s;
     });
 
-    let sum=teudaArrNumber1.reduce(function(res, cur) {
-        return res+cur;
+      let sum=teudaArrNumber1.reduce(function(res, cur) {
+      return res+cur;
     },0);
 
     let check=(sum % 10==0) ? true : false;
