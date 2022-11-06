@@ -68,3 +68,8 @@ console.log(generateRandomTeudZehut());
 
 console.log(checkTeudatZehut(generateRandomTeudZehut()));
 console.log(checkTeudatZehut("814811410"));
+
+let num=['123456782', '1234', 'abc233'];
+num.forEach(function(e) {
+    console.log(`trudat zehut: ${e}, return of: ${checkTeudatZehut(e)}`);
+});
