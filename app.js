@@ -36,4 +36,17 @@ function move(array, index, offset) {
     array.splice(index+offset,0,movedElem);
     return array;
 }
-
+function getEvenNumbers(numbers) {
+    //let res=numbers.filter(n => n % 2 ==0);
+    //return res; //res-array from even elements - res its temp array
+    return numbers.filter(n => n % 2 ==0); //(n => !(n % 2 ==0))
+                                           //numbers.filter((n,i) => i % 2 ==0);  even  index   
+}
+let arrr=[2,-10,3,1999,9];
+arrr.sort((a,b)=>a-b);
+console.log(arrr);
+let arrrs=["abc","a", "lmn","y"];
+//arrrs.sort((a,b)=>a-b);
+arrrs.sort((a,b)=>a<b ? -1: 1);
+//arrrs.sort((a,b)=>a.length-b.length); sort by leng
+console.log(arrrs);
