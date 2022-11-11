@@ -7,4 +7,23 @@ function minMax(array) {
     return minmax;
 }
 
+function deleteWithPrefix(strings, prefix) {
+  let arr=strings.map(function(e) {
+    if (e.includes(prefix)) {
+        e=e.split(prefix).join('');
+        e=e.split(' ').join('');
+    }
+    return e;
+  })
+  return arr;
+}
+function filterArray(arr){   
+    let res= arr.filter(function (el,id) {
+        if (arr.indexOf(el) === id)
+        {return arr;}               
+    })
+    return res;
+}
+
 console.log(minMax([155,65,-55,2,-3,4]));
+console.log(filterArray(deleteWithPrefix(["abc", "old_abc", "lmn", "123", "old_lmn"], "old_")));
