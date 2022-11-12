@@ -25,5 +25,20 @@ function filterArray(arr){
     return res;
 }
 
+function getEvenOdd(numbers) {
+let copy=numbers.slice();
+copy.sort((a,b)=>a-b);
+let evenArray=copy.filter(function(e) {   
+    return e % 2==0;
+})
+  copy.sort((a,b)=>b-a);
+  let oddArray=copy.filter(function(e) {
+    return e % 2!=0;
+  })
+  let res=evenArray.concat(oddArray);
+  return res; 
+} 
+
 console.log(minMax([155,65,-55,2,-3,4]));
 console.log(filterArray(deleteWithPrefix(["abc", "old_abc", "lmn", "123", "old_lmn"], "old_")));
+console.log(getEvenOdd([11,6,3,8,5,2,7,4]));
