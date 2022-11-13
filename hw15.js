@@ -25,6 +25,11 @@ function filterArray(arr){
     return res;
 }
 
+
+function deleteWithPrefix2(strings, prefix) {
+  return strings.filter(str => !str.startsWith(prefix))
+}
+
 function getEvenOdd(numbers) {
 let copy=numbers.slice();
 copy.sort((a,b)=>a-b);
@@ -39,6 +44,22 @@ let evenArray=copy.filter(function(e) {
   return res; 
 } 
 
+function  getSortedEvenOdd2(numbers) {
+  const result = numbers.slice();
+  return result.sort((a, b) => {
+      let res = 1;
+      if (a % 2 == 0 && b % 2 != 0) {
+          res = -1;
+      } else if (a % 2 == 0 && b % 2 == 0) {
+          res = a - b;
+      } else if (a % 2 == 1 && b % 2 == 1) {
+          res = b - a;
+      }
+      return res;
+  })
+}
+
 console.log(minMax([155,65,-55,2,-3,4]));
 console.log(filterArray(deleteWithPrefix(["abc", "old_abc", "lmn", "123", "old_lmn"], "old_")));
+console.log(deleteWithPrefix2(["abc", "old_abc", "lmn", "123", "old_lmn"], "old_"));
 console.log(getEvenOdd([11,6,3,8,5,2,7,4]));
