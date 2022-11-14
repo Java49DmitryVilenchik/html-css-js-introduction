@@ -1,6 +1,7 @@
 const word="table";
 const N_LETTERS=5;
 var count=6;
+//const buttonNewGame=document.querySelector("new-game");
 const labelAttempt=document.querySelector(".count-attempts");
 const letterElements=document.querySelectorAll(".letter-guess");
 function onChange(event) {
@@ -26,17 +27,18 @@ function onChange(event) {
             labelAttempt.style.color='green';
             labelAttempt.textContent='Congratulations - you have guessed word';
             count=6;
-        } //{alert('Victory');}       
+        }        
         else if (count==0) {
             labelAttempt.style.color='red';
             labelAttempt.textContent='Sorry – your guess trials have ended up';
             count=6;
+            //buttonNewGame.style.visibility='visible';
         } 
         
         else {
             labelAttempt.style.color='blue';
             labelAttempt.textContent=`You have ${count} attempts`; 
-        } //{alert(`! YO ! count: ${count}`);}
+        } 
     }    
     
 }
