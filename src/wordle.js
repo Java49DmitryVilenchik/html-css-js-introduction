@@ -1,8 +1,10 @@
-//const word="table";
+//const word="green";
 // Math.random() * (max - min) + min;
+
 let ArrayWords=["table","world","count","index","green"];
 let index=Math.floor(Math.random()*5);
 let word=ArrayWords[index];
+
 const N_LETTERS=5;
 var count=6;
 //const buttonNewGame=document.querySelector("new-game");
@@ -19,10 +21,15 @@ function onChange(event) {
         wordAr.forEach((l, i)=> letterElements[i].innerHTML=l)
         const colors = wordAr.map((l,i) => {
             let index=word.indexOf(l);
+            let indexLast=word.lastIndexOf(l);
             let res='red';
             if (index > -1) {
                 res=index==i ? 'green' : 'yellow'
+                if (indexLast> -1) {
+                    if (indexLast==i) {res='green';}                    
+                }
             }
+            
             return res;
         })
         colors.forEach((c,i) => letterElements[i].style.color=c)
