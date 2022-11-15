@@ -9,10 +9,10 @@ var count=6;
 const labelAttempt=document.querySelector(".count-attempts");
 const letterElements=document.querySelectorAll(".letter-guess");
 function onChange(event) {
-    const wordGuess=event.target.value;
+    const wordGuess=(event.target.value).toLowerCase();
     event.target.value='';
     if (wordGuess.length !=N_LETTERS) {
-        alert(`A word should contain ${N_LETTERS} letters`)
+        alert(`A word ${wordGuess} should contain ${N_LETTERS} letters`)
 
     } else { 
         const wordAr=Array.from(wordGuess);
