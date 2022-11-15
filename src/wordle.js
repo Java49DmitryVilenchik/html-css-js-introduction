@@ -1,4 +1,8 @@
-const word="table";
+//const word="table";
+// Math.random() * (max - min) + min;
+let ArrayWords=["table","world","count","index","green"];
+let index=Math.floor(Math.random()*5);
+let word=ArrayWords[index];
 const N_LETTERS=5;
 var count=6;
 //const buttonNewGame=document.querySelector("new-game");
