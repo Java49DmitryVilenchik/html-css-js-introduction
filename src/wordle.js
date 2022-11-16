@@ -22,7 +22,7 @@ function getDivsElements() {
     INDEX=Math.floor(Math.random() * words.length);
     let wordField=words[INDEX];
     QUESTION=questions[INDEX];
-    //questionElement.innerHTML=QUESTION;
+    //questionElement.style.con
 
     let wordFieldAr=Array.from(wordField);
     N_LETTERS=wordFieldAr.length;
