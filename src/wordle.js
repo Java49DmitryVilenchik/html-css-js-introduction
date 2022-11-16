@@ -1,13 +1,24 @@
-const words = ["pappy", "beach", "apple", "react", "basis",
+const words = ["pappyrty", "beach", "apple", "react", "basis",
  "anger", "hello", "dress"];
  let word;
 const N_LETTERS = 5;
+const sectionElement=document.querySelector(".word-guess")
+sectionElement.innerHTML=getDivsElements();
 const letterElements = document.querySelectorAll(".letter-guess");
 const trialsElement = document.querySelector(".guess-trials");
 const gameOverElement = document.querySelector(".game-over-message");
 const playAgainElement = document.getElementById("play-again");
+
 const INITIAL_TRIALS = 6;
 let trials = INITIAL_TRIALS;
+function getDivsElements() {
+
+    let wordField=words[0];
+    let wordFieldAr=Array.from(wordField);
+    let res=wordFieldAr.map(letter => `<div class="letter-guess">${letter}</div>`);
+    return res.join('');
+
+}
 function showTrialsMessage(trials) {
     
         trialsElement.innerHTML = `remained ${trials} guess trials`;
@@ -15,13 +26,14 @@ function showTrialsMessage(trials) {
    
 }
 function startGame() {
-    let index = Math.floor(Math.random() * words.length);
-    word = words[index];
-    trials = INITIAL_TRIALS
-    showTrialsMessage(trials);
-    gameOverElement.innerHTML ='';
-    playAgainElement.style.display='none';
-    letterElements.forEach(e => e.innerHTML='')
+    letterElements[2].style.background="white";
+    //let index = Math.floor(Math.random() * words.length);
+    //word = words[index];
+    //trials = INITIAL_TRIALS
+    //showTrialsMessage(trials);
+    //gameOverElement.innerHTML ='';
+    //playAgainElement.style.display='none';
+    //letterElements.forEach(e => e.innerHTML='')
 }
 function onChange(event) {
     const wordGuess = event.target.value;
