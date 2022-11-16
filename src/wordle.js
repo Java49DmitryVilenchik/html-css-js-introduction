@@ -1,20 +1,31 @@
-const words = ["pappyrty", "beach", "apple", "react", "basis",
- "anger", "hello", "dress"];
- let word;
-const N_LETTERS = 5;
+const words = ["pappy", "beach", "apple", "react", "basis",
+ "anger", "hello"];
+ const questions = ["question 1?", "question 2?", "question 3?", "question 4?", "question 5?", "question 6?", "question 7?"];
+let word;
+
+var N_LETTERS = 0;
+var QUESTION=questions[0];
+var INDEX=0;
+
 const sectionElement=document.querySelector(".word-guess")
 sectionElement.innerHTML=getDivsElements();
 const letterElements = document.querySelectorAll(".letter-guess");
 const trialsElement = document.querySelector(".guess-trials");
 const gameOverElement = document.querySelector(".game-over-message");
 const playAgainElement = document.getElementById("play-again");
+const questionElement = document.getElementById("question");
 
 const INITIAL_TRIALS = 6;
 let trials = INITIAL_TRIALS;
-function getDivsElements() {
 
-    let wordField=words[0];
+function getDivsElements() {
+    INDEX=Math.floor(Math.random() * words.length);
+    let wordField=words[INDEX];
+    QUESTION=questions[INDEX];
+    //questionElement.innerHTML=QUESTION;
+
     let wordFieldAr=Array.from(wordField);
+    N_LETTERS=wordFieldAr.length;
     let res=wordFieldAr.map(letter => `<div class="letter-guess">${letter}</div>`);
     return res.join('');
 
