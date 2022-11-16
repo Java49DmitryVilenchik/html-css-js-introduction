@@ -21,13 +21,13 @@ function onChange(event) {
         wordAr.forEach((l, i)=> letterElements[i].innerHTML=l)
         const colors = wordAr.map((l,i) => {
             let index=word.indexOf(l);
-            let indexLast=word.lastIndexOf(l);
+            //let indexLast=word.lastIndexOf(l);
             let res='red';
             if (index > -1) {
-                res=index==i ? 'green' : 'yellow'
-                if (indexLast> -1) {
-                    if (indexLast==i) {res='green';}                    
-                }
+                res=word[i]==l ? 'green' : 'yellow'
+               // if (indexLast> -1) {
+               //     if (indexLast==i) {res='green';}                    
+               // }
             }
             
             return res;
