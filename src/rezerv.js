@@ -21,7 +21,7 @@ let trials = INITIAL_TRIALS;
 function getDivsElements() {
     INDEX=Math.floor(Math.random() * words.length);
     let wordField=words[INDEX];
-    //QUESTION=questions[INDEX];
+    QUESTION=questions[INDEX];
     
     let wordFieldAr=Array.from(wordField);
     N_LETTERS=wordFieldAr.length;
@@ -31,25 +31,20 @@ function getDivsElements() {
 }
 function showTrialsMessage(trials) {
     
-        trialsElement.innerHTML = `remained ${trials} guess trials and ${QUESTION} and word ${words[INDEX]}`;
+        trialsElement.innerHTML = `remained ${trials} guess trials and ${QUESTION}`;
        
    
 }
 function startGame() {
-    //letterElements[2].style.background="white";
-    letterElements.forEach(function(e){
-        e.style.background='black';
-    })
-    QUESTION=questions[INDEX];
-
+    letterElements[2].style.background="white"; //
+       
     //let index = Math.floor(Math.random() * words.length);
-    word = words[INDEX];
+    //word = words[index];
     trials = INITIAL_TRIALS
-    showTrialsMessage(trials);    
+    showTrialsMessage(trials);
 
-    gameOverElement.innerHTML ='';
-    playAgainElement.style.display='none';
-    
+    //gameOverElement.innerHTML ='';
+    //playAgainElement.style.display='none';
     //letterElements.forEach(e => e.innerHTML='')
 }
 function onChange(event) {
@@ -63,20 +58,16 @@ function onChange(event) {
     } else {
         const wordAr = Array.from(wordGuess);
         wordAr.forEach((l, i) => letterElements[i].innerHTML = l)
-
         const colors = wordAr.map((l, i) => {
-             let index = word.indexOf(l);
-             let res = 'black';
-            if (index  > -1) { //letterElements[index].style.background='white'; res='green';
-
-               res = l == word[i] ? 'green' : 'yellow'
-               // if (l==word[i] || word[i]==l) {res='white';} //else if (word[i]==l) 
-                
+            let index = word.indexOf(l);
+            let res = 'red';
+            if (index  > -1) {
+                res = l == word[i] ? 'green' : 'yellow'
             }
             return res;
         })
         colors.forEach((c, i) =>
-        letterElements[i].style.background=c)
+         letterElements[i].style.color=c)
     }
     const res = wordGuess == word;
     if (trials == 0 || res) {
