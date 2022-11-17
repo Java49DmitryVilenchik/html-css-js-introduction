@@ -22,7 +22,7 @@ function getDivsElements() {
     INDEX=Math.floor(Math.random() * words.length);
     let wordField=words[INDEX];
     QUESTION=questions[INDEX];
-    //questionElement.innerHTML=`yahoo`;
+    //questionElement.textContent='qwerty';
     let wordFieldAr=Array.from(wordField);
     N_LETTERS=wordFieldAr.length;
     let res=wordFieldAr.map(letter => `<div class="letter-guess">${letter}</div>`);
@@ -32,15 +32,19 @@ function getDivsElements() {
 function showTrialsMessage(trials) {
     
         trialsElement.innerHTML = `remained ${trials} guess trials and ${QUESTION}`;
-    
+        questionElement.innerHTML=`question on word: ${QUESTION} and ${trials}`;
    
 }
 function startGame() {
     letterElements[2].style.background="white";
+    
+    //questionElement.textContent='qwerty';???????
+   
     //let index = Math.floor(Math.random() * words.length);
     //word = words[index];
     trials = INITIAL_TRIALS
     showTrialsMessage(trials);
+
     //gameOverElement.innerHTML ='';
     //playAgainElement.style.display='none';
     //letterElements.forEach(e => e.innerHTML='')
