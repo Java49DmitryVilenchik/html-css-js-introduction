@@ -6,9 +6,6 @@ var INDEX=Math.floor(Math.random()*5);
 var WORD=ArrayWords[INDEX];
 var QUESTION=questions[INDEX];
 
-
-const Flag=false;
-
 const sectionElement=document.querySelector(".word-guess")
 sectionElement.innerHTML=getDivsElements();
 const letterElements = document.querySelectorAll(".letter-guess");
@@ -51,9 +48,7 @@ function onChange(event) {
     labelGameOver.innerHTML="Let's go!!! But remember, you must inputs words!!! (else may be little bug)";
 
     let wordFieldAr=Array.from(WORD); 
-    //let LengWord=wordFieldAr.length;
-    //let Leng=0;
-
+    
     const wordAr=Array.from(wordGuess);
     
 
@@ -84,9 +79,7 @@ function endGame(isSuccess) {
         labelGameOver.innerHTML =  "Sorry you are loser";
         labelGameOver.style.color = "red"
     }
-    
-
-   
+       
    //trialsElement.innerHTML = ''
 }
 function startNewGame() {
