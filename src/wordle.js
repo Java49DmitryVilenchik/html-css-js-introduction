@@ -1,94 +1,95 @@
-const words = ["pappy", "beach", "apple", "react", "basis",
- "anger", "hello"];
- const questions = ["question 1?", "question 2?", "question 3?", "question 4?", "question 5?", "question 6?", "question 7?"];
-let word;
 
-var N_LETTERS = 0;
-var QUESTION=questions[0];
-var INDEX=0;
+let ArrayWords=["table","notebook","count","pen","magazin"];
+let questions = ["question 1? Answer- table", "question 2? Answer- notebook", "question 3? Answer- count", "question 4? Answer- pen", "question 5? Answer-magazin"];
+
+var INDEX=Math.floor(Math.random()*5);
+var WORD=ArrayWords[INDEX];
+var QUESTION=questions[INDEX];
+
+
+const Flag=false;
 
 const sectionElement=document.querySelector(".word-guess")
 sectionElement.innerHTML=getDivsElements();
 const letterElements = document.querySelectorAll(".letter-guess");
-const trialsElement = document.querySelector(".guess-trials");
-const gameOverElement = document.querySelector(".game-over-message");
-const playAgainElement = document.getElementById("play-again");
-const questionElement = document.querySelector("question");
 
-const INITIAL_TRIALS = 6;
-let trials = INITIAL_TRIALS;
+const labelQuestion=document.querySelector(".question");
+const labelGameOver = document.querySelector(".game-over-message");
+
+const playAgainElement = document.getElementById("play-again");
 
 function getDivsElements() {
-    INDEX=Math.floor(Math.random() * words.length);
-    let wordField=words[INDEX];
-        
-    let wordFieldAr=Array.from(wordField);
-    N_LETTERS=wordFieldAr.length;
+    let wordField=WORD;
+    let wordFieldAr=Array.from(wordField);    
     let res=wordFieldAr.map(letter => `<div class="letter-guess">${letter}</div>`);
     return res.join('');
 
 }
-function showTrialsMessage(trials) {    
-        trialsElement.innerHTML = `remained ${trials} guess trials and ${QUESTION} and word ${words[INDEX]}`;    
-   
+
+function showQuestion() {    
+    labelQuestion.innerHTML = `You question: ${QUESTION}`;    
+
 }
+
 function startGame() {
     
     letterElements.forEach(function(e){
         e.style.background='black';
     })
-    QUESTION=questions[INDEX];    
-    word = words[INDEX];
-    trials = INITIAL_TRIALS
-    showTrialsMessage(trials);    
 
-    gameOverElement.innerHTML ='';
-    playAgainElement.style.display='none';
+    showQuestion();   
+
+    labelGameOver.innerHTML ='';
+    
 
     //letterElements.forEach(e => e.innerHTML='')
 }
+
 function onChange(event) {
-    const wordGuess = event.target.value;
-    trials--;
-    showTrialsMessage(trials);
+    const wordGuess=(event.target.value).toLowerCase();
+    event.target.value='';
+    labelGameOver.innerHTML="Let's go!!! But remember, you must inputs words!!! (else may be little bug)";
+
+    let wordFieldAr=Array.from(WORD); 
+    //let LengWord=wordFieldAr.length;
+    //let Leng=0;
+
+    const wordAr=Array.from(wordGuess);
     
-    //event.target.value='';
-    if (wordGuess.length != N_LETTERS) {
-        alert(`A word should contain ${N_LETTERS} letters`)
-    } else {
-        const wordAr = Array.from(wordGuess);
-        wordAr.forEach((l, i) => letterElements[i].innerHTML = l)
 
-        const colors = wordAr.map((l, i) => {
-            let index = word.indexOf(l);
-             let res = 'black';
-            if (index  > -1) { if (l==word[i]) {res='green';} 
-            else {
+    const colors=wordFieldAr.map(function(l) {
+        return wordAr.includes(l) ? 'white' : 'black';
+    })
+    
+    colors.forEach(function(c,i) {
+       if (c=="white") {
+            if (letterElements[i].style.background !='white') {
                 
-                res='yellow'}
+                letterElements[i].style.background='white';
             }
-           return res;
-       })
-
-        colors.forEach((c, i) =>
-        letterElements[i].style.background=c)
-    }
-    const res = wordGuess == word;
-    if (trials == 0 || res) {
-        endGame(res);
-    }
+        }
+    })
+    let whiteLetters = colors.filter(i => i === 'white').length;
+    let Leng=wordFieldAr.length;
+    if (Leng==whiteLetters) {endGame(true); location.reload();}
     
 }
 function endGame(isSuccess) {
     if (isSuccess) {
-        gameOverElement.innerHTML =  "Congratulations you are winner";
-        gameOverElement.style.color = "green"
+        let Message="Congratulations you are winner";
+        //labelGameOver.innerHTML =  "Congratulations you are winner";
+        //labelGameOver.style.color = "green";
+        alert(Message);
     } else {
-        gameOverElement.innerHTML =  "Sorry you are loser";
-        gameOverElement.style.color = "red"
+        labelGameOver.innerHTML =  "Sorry you are loser";
+        labelGameOver.style.color = "red"
     }
+    
+
    
-   playAgainElement.style.display='block';
-   trialsElement.innerHTML = ''
+   //trialsElement.innerHTML = ''
 }
-startGame()
+function startNewGame() {
+    location.reload();
+}
+startGame();

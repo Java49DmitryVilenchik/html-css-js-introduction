@@ -17,6 +17,10 @@ body {
     text-align: center;
 }
 .question {
-    color: yellow;
+    margin-top: 1em;
+    color: blue;
     
+}
+.new-game {
+    margin-top: 1em;
 }
