@@ -1,7 +1,7 @@
 
 function isAn(str1,str2) {
-    let ar1=Array.from(str1);
-    let ar2=Array.from(str2);
+    let ar1=Array.from(str1.toLowerCase());
+    let ar2=Array.from(str2.toLowerCase());
 
     let res=true;
 
@@ -29,3 +29,4 @@ console.log(isAn("yellow","wellly"));
 console.log(isAn("yellw","welloy"));
 
 console.log(isAn("yellow","welloy"));
+console.log(isAn("YelLow","wEllOy"));
