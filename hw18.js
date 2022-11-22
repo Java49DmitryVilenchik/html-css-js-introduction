@@ -14,7 +14,7 @@ function isAn(str1,str2) {
 
         });
         ar2.forEach(element => {
-            if (A1[element] && A1[element]>0) {A1[element]--;}
+            if (A1[element]) {A1[element]--; if (A1[element]<0) {res=false;}}
             else {res=false;}
 
         });
@@ -29,4 +29,3 @@ console.log(isAn("yellw","welloy"));
 
 console.log(isAn("yellow","welloy"));
 console.log(isAn("YelLow","wEllOy"));
-
