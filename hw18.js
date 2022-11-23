@@ -41,8 +41,8 @@ function isAn2(str1,str2) {
         });
 
         let index=0;
-        while (index<ar2.length && res) {
-            if (A1[ar2[index]]==0) {res=false;}
+        while (index<ar2.length && res==true) {
+            if (A1[ar2[index]]==undefined) {res=false;}
             else {A1[ar2[index]]--; index++;}
         }        
     }     
@@ -60,3 +60,4 @@ console.log(isAn("YelLow","wEllOy"));
 
 console.log(isAn2("yellow","welloy"));
 console.log(isAn2("yellw","welloy"));
+console.log(isAn2("sun","sub"));
