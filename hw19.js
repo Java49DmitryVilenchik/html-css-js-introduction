@@ -68,7 +68,15 @@ function getEmployeesBySalary(Employee, salaryFrom, salaryTo) {
     
 }
 
-let Obj=createRandomEmployees(10,4,5000,25000,2004,1955);
+function increaseSalary(Employee, borderSalary, percent) {
+    let smallSalary=Employee.filter(function(element) {
+        return (element.salary<borderSalary);
+    });    
+    return smallSalary.map((element) => (element.salary*percent)/100+element.salary)
+}
+
+let Obj=createRandomEmployees(8,4,5000,25000,2004,1955);
 console.log(Obj);
 console.log("Average age is:",getAverageAge(Obj));
 console.log(getEmployeesBySalary(Obj,9000,14000));
+console.log(increaseSalary(Obj,9000,10));
