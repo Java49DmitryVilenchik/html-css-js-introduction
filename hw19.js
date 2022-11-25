@@ -1,15 +1,13 @@
 function createRandomEmployees(nEmployees, idDigits, 
-    minSalary, maxSalary) {
+    minSalary, maxSalary, minBirthYear, maxBirthYear) {
 
         let Employees=["Vasya","Ivan","Boris","Michel","Sara","Nataly"]
         let salary=Math.floor(Math.random()*(maxSalary-minSalary))+minSalary;
         let ArrId=generateArrayRandomId(nEmployees, idDigits);
-        
-
 
         let res=[];
         ArrId.forEach(function(e){
-            res.push(createEmployee(Employees[Math.floor(Math.random()*6)]+e, randomDate('02/13/2001', '01/01/1970') , 
+            res.push(createEmployee(Employees[Math.floor(Math.random()*6)]+e, randomDate(minBirthYear, maxBirthYear) , 
             Math.floor(Math.random()*(maxSalary-minSalary))+minSalary));   
         })
         
@@ -19,13 +17,8 @@ function createRandomEmployees(nEmployees, idDigits,
 function generateArrayRandomId(empl, digit) {
     let arr = []
     let rundomnumber;
-    let min=Math.pow(10, digit-1)
-    let max=0;
-    let ind=digit;
-    while (ind>0) {
-        ind--;
-        max=max+(9*Math.pow(10, ind));
-    }
+    let min=Math.pow(10, digit-1);    
+    let max=Math.pow(10, digit);    
 
     while (arr.length <= empl-1) {
 
@@ -35,8 +28,7 @@ function generateArrayRandomId(empl, digit) {
         arr.push(rundomnumber);         
 
     }
- }
-    
+ }    
     return arr;
 }
 
@@ -44,20 +36,39 @@ function createEmployee(name, birthYear, salary) {
     return {name, birthYear, salary};
 }
 
-function randomDate(date1, date2){
-    function getRandomArbitrary(min, max) {
-      return Math.random() * (max - min) + min;
-    }
-    var date1 = date1 || '01-01-1970'
-    var date2 = date2 || new Date().toLocaleDateString()
-    date1 = new Date(date1).getTime()
-    date2 = new Date(date2).getTime()
-    if( date1>date2){
-        return new Date(getRandomArbitrary(date2,date1)).toLocaleDateString()   
-    } else{
-        return new Date(getRandomArbitrary(date1, date2)).toLocaleDateString()  
+//function randomDate(date1, date2){
+//    function getRandomArbitrary(min, max) {
+//      return Math.random() * (max - min) + min;
+//    }
+//    var date1 = date1 || '01-01-1970'
+//    var date2 = date2 || new Date().toLocaleDateString()
+//    date1 = new Date(date1).getTime()
+//    date2 = new Date(date2).getTime()
+//    if( date1>date2){
+//        return new Date(getRandomArbitrary(date2,date1)).toLocaleDateString()   
+//    } else{
+//        return new Date(getRandomArbitrary(date1, date2)).toLocaleDateString()  
 
-    }
+//    }
+//}
+function randomDate(max, min) {
+    return Math.floor(Math.random()*(max-min))+min; 
+}
+function getAverageAge (Employee) {
+    let avg = Employee.reduce((r,i) => r +  i.birthYear, 0) / (Employee.length || 1);
+    return  Math.round((new Date()).getFullYear()-avg);
 }
 
-console.log(createRandomEmployees(5,4,5000,15000));
+function getEmployeesBySalary(Employee, salaryFrom, salaryTo) {
+    
+    let EmployeesBySalary=Employee.filter(function(em) {
+        return ((em.salary>salaryFrom) && (em.salary<salaryTo));        
+    });
+    return EmployeesBySalary.sort((a, b) => a.salary > b.salary ? 1 : -1);
+    
+}
+
+let Obj=createRandomEmployees(10,4,5000,25000,2004,1955);
+console.log(Obj);
+console.log("Average age is:",getAverageAge(Obj));
+console.log(getEmployeesBySalary(Obj,9000,14000));
