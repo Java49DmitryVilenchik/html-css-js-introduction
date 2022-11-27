@@ -68,7 +68,7 @@ function getEmployeesBySalary(Employee, salaryFrom, salaryTo) {
     
 }
 
-function increaseSalary(Employee, borderSalary, percent) {
+function increaseSalary(Employee, borderSalary, percent) {  //forEach!!!!
     let smallSalary=Employee.filter(function(element) {
         return (element.salary<borderSalary);
     });    
