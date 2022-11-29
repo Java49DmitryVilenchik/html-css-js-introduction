@@ -16,6 +16,9 @@ textMostPopular.innerHTML=getMostPopular();
 const textMinPopular=document.querySelector(".text-min-popular");
 textMinPopular.innerHTML=getMinPopular();
 
+const body=document.querySelector(".bdy");
+
+
 
 ulElement.innerHTML = getPosterImages();
 function getPosterImages() {
@@ -32,17 +35,22 @@ function getPosterImages() {
 function show(index) {
     sectionElements.forEach(section => section.hidden = true);
     sectionElements[index].hidden = false;
-    //if (index==1) {alert("Ok");}
+    if (index==1 || index==2) {body.style.overlow="hidden";} 
+    else {body.style.overlow="visible";}     
 }
 function getMostPopular() {
     const mostPopular=moviesData.results.reduce(function(maxPopular, current){
         return (maxPopular.popularity>current.popularity) ? maxPopular : current;
     });
     const infoMostPopular=`
-    <img class="movie-image" src="${httpPrefix}${mostPopular.poster_path}">
+    <div class="box">
+    <div><img class="movie-image" src="${httpPrefix}${mostPopular.poster_path}"></div>
+    <div class="content">
     <label class="movie-title">${mostPopular.original_title}</label>
     <label class="movie-overview">${mostPopular.overview}</label>
-    <label class="movie-overview">${mostPopular.popularity}</label>`;
+    </div>    
+    </div>
+    `;
     return infoMostPopular;
 }
 
@@ -51,9 +59,13 @@ function getMinPopular() {
         return (minPopular.popularity<current.popularity) ? minPopular : current;
     });
     const infoMinPopular=`
-    <img class="movie-image" src="${httpPrefix}${minPopular.poster_path}">
+    <div class="box">
+    <div><img class="movie-image" src="${httpPrefix}${minPopular.poster_path}"></div>
+    <div class="content">
     <label class="movie-title">${minPopular.original_title}</label>
     <label class="movie-overview">${minPopular.overview}</label>
-    <label class="movie-overview">${minPopular.popularity}</label>`;
+    </div>    
+    </div>
+    `;
     return infoMinPopular;
 }

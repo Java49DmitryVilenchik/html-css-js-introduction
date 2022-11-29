@@ -1,5 +1,6 @@
 body, html {
     height: 100%;
+   
 }
 .fixblock {
     width: 100px;
@@ -9,11 +10,19 @@ body, html {
     bottom: 55%;
     right: 10px;
 }
+/*.fixblock {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100px;
+    height: 300px;
+}*/
 .movie-image {
     height: 200px;
     width: auto;
     display: flex;
-    columns: auto;
+    flex-direction: column;
+    
     
 }
 .movie-item {
@@ -22,8 +31,22 @@ body, html {
     
 }
 .movie-title {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .movies-list {
     list-style: none;
+}
+.box {
+    display: flex;
+    /*justify-content: flex-start;*/
+    align-items: flex-start;
+    width: 800px;
+}
+.box .content {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    
 }

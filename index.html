@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="src/style.css">
     <title>Movies</title>
 </head>
-<body>
+<body class="bdy" style="overflow: visible;">
     <div class="fixblock">
-    <button onclick="show(0)">Show All Movies</button>
-    <button onclick="show(1)">Show Most Popular Movie</button>
-    <button onclick="show(2)">Show Least Popular Movie</button>
+    <div><button onclick="show(0)">Show All Movies</button></div>
+    <div><button onclick="show(1)">Show Most Popular Movie</button></div>
+    <div><button onclick="show(2)">Show Least Popular Movie</button></div>
     </div>
     <section hidden>
         <ul class="movies-list">
@@ -22,13 +22,13 @@
     <section hidden>
 
         <label class="text-most-popular"></label>
-        <img class="movies-most-popular">
+        <!--<img class="movies-most-popular"> -->
 
     </section>
     <section hidden>
 
         <label class="text-min-popular"></label>
-        <img class="movies-min-popular">
+        <!--<img class="movies-min-popular"> -->
 
 
     </section>
