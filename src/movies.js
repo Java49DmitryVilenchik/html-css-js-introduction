@@ -9,8 +9,14 @@ const moviesData = JSON.parse(jsonData);
 // console.log(httpPrefix + moviesData.results[2].poster_path);
 const ulElement = document.querySelector(".movies-list");
 const sectionElements = document.querySelectorAll("section");
+
 const textMostPopular=document.querySelector(".text-most-popular");
 textMostPopular.innerHTML=getMostPopular();
+
+const textMinPopular=document.querySelector(".text-min-popular");
+textMinPopular.innerHTML=getMinPopular();
+
+
 ulElement.innerHTML = getPosterImages();
 function getPosterImages() {
    const arImages = moviesData.results.map(movie => 
@@ -38,4 +44,16 @@ function getMostPopular() {
     <label class="movie-overview">${mostPopular.overview}</label>
     <label class="movie-overview">${mostPopular.popularity}</label>`;
     return infoMostPopular;
+}
+
+function getMinPopular() {
+    const minPopular=moviesData.results.reduce(function(minPopular, current){
+        return (minPopular.popularity<current.popularity) ? minPopular : current;
+    });
+    const infoMinPopular=`
+    <img class="movie-image" src="${httpPrefix}${minPopular.poster_path}">
+    <label class="movie-title">${minPopular.original_title}</label>
+    <label class="movie-overview">${minPopular.overview}</label>
+    <label class="movie-overview">${minPopular.popularity}</label>`;
+    return infoMinPopular;
 }
