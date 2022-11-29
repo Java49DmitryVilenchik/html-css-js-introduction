@@ -1,0 +1,26 @@
+
+.fixblock {
+    width: 100px;
+    height: 300px;
+    /*border: 1px solid #000;*/
+    position: fixed;
+    bottom: 55%;
+    right: 10px;
+}
+.movie-image {
+    height: 200px;
+    width: auto;
+    display: block
+    
+}
+.movie-item {
+    height: 300px;
+    width: auto;
+    
+}
+.movie-title {
+    display: block;
+}
+.movies-list {
+    list-style: none;
+}
