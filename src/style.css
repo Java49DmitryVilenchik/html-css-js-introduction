@@ -1,4 +1,6 @@
-
+body, html {
+    height: 100%;
+}
 .fixblock {
     width: 100px;
     height: 300px;
@@ -10,7 +12,8 @@
 .movie-image {
     height: 200px;
     width: auto;
-    display: block
+    display: flex;
+    columns: auto;
     
 }
 .movie-item {

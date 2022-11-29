@@ -26,8 +26,16 @@ function getPosterImages() {
 function show(index) {
     sectionElements.forEach(section => section.hidden = true);
     sectionElements[index].hidden = false;
-    if (index==1) {alert("Ok");}
+    //if (index==1) {alert("Ok");}
 }
 function getMostPopular() {
-    return moviesData.results[0].original_title;
+    const mostPopular=moviesData.results.reduce(function(maxPopular, current){
+        return (maxPopular.popularity>current.popularity) ? maxPopular : current;
+    });
+    const infoMostPopular=`
+    <img class="movie-image" src="${httpPrefix}${mostPopular.poster_path}">
+    <label class="movie-title">${mostPopular.original_title}</label>
+    <label class="movie-overview">${mostPopular.overview}</label>
+    <label class="movie-overview">${mostPopular.popularity}</label>`;
+    return infoMostPopular;
 }
