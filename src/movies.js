@@ -24,14 +24,12 @@ ulElement.innerHTML = getPosterImages();
 function getPosterImages() {
    const arImages = moviesData.results.map(movie => 
         `
-        <div class="box">
-        <li class="movie-item">         
+        <div class="box">                 
         <img class="movie-image" src="${httpPrefix}${movie.poster_path}">
         <div class="content">
         <label class="movie-title">${movie.original_title}</label>
         <label class="movie-overview">${movie.overview}</label>
-        </div>        
-        </li>
+        </div>         
         </div>
         `);
     return arImages.join('');

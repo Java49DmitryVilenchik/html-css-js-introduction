@@ -21,8 +21,9 @@ body, html {
     height: 200px;
     width: auto;
     display: flex;
+    padding: 20px;
     flex-direction: column;
-    
+    justify-content:space-between;
     
 }
 .movie-item {
@@ -38,7 +39,8 @@ body, html {
 }
 .movies-list {
     list-style: none;
-    display: inline;    
+    display: inline;
+        
 }
 .box {
     display: flex;    
