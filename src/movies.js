@@ -23,13 +23,17 @@ const body=document.querySelector(".bdy");
 ulElement.innerHTML = getPosterImages();
 function getPosterImages() {
    const arImages = moviesData.results.map(movie => 
-        `<li class="movie-item"> 
+        `
+        <div class="box">
+        <li class="movie-item">         
         <img class="movie-image" src="${httpPrefix}${movie.poster_path}">
-
+        <div class="content">
         <label class="movie-title">${movie.original_title}</label>
         <label class="movie-overview">${movie.overview}</label>
-        
-        </li>`);
+        </div>        
+        </li>
+        </div>
+        `);
     return arImages.join('');
 }
 function show(index) {
