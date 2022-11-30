@@ -8,51 +8,37 @@ body, html {
     height: 300px;    
     position: fixed;
     bottom: 55%;
-    right: 10px;
+    right: 20px;
 }
-/*.fixblock {
-    display: flex;
-    justify-content: space-between;
-    position: fixed;
-    width: 100px;
-    height: 300px;
-}*/
+
 .movie-image {
     height: 200px;
     width: auto;
     display: flex;
     padding: 20px;
-    flex-direction: column;
-    justify-content:space-between;
+    
     
 }
-.movie-item {
-    height: 300px;
-    width: auto;
-    
-}
+
 .movie-title {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: column;   
     color: brown;
 }
-.movies-list {
-    list-style: none;
-    display: inline;
-        
-}
+
 .box {
     display: flex;    
     align-items: flex-start;
-    width: 800px;
+    width: 800px;   
+
 }
 .box .content {
     flex: 1;
     padding: 30px;
-    text-align: center;
+    text-align: left;
     
 }
+
 .movie-overview {
     
     color: blueviolet;
