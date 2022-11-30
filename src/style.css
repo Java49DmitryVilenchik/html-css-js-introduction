@@ -22,20 +22,26 @@ body, html {
 
 .movie-title {
     display: flex;
-    flex-direction: column;   
+    flex-direction: column;
+    justify-content: center;
     color: brown;
 }
-
+.movies-list {
+    list-style: none;
+    display: inline;
+        
+}
 .box {
     display: flex;    
     align-items: flex-start;
-    width: 800px;   
+    width: 800px;
+    
 
 }
 .box .content {
     flex: 1;
     padding: 30px;
-    text-align: left;
+    text-align: center;
     
 }
 
