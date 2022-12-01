@@ -1,5 +1,5 @@
 const inputElements=document.querySelectorAll(".form-class [name]");
-
+const modalWindow=document.getElementById("myModal");
 
 function onSubmit(event) {
     event.preventDefault();
@@ -25,15 +25,10 @@ function onSelectDate(event) {
         let year=(event.target.value).split("-");
 
         if (year[0]<1950 || year[0]>2022) {            
-            event.target.value='';
-
-
+            
+            modalWindow.style.display='block';
+            event.target.value=''
+            setTimeout(function(){modalWindow.style.display='none';}, 5000);
         }
-    }
-}
-function Message(text, value1, value2, value_def, res) {
-    if (res<value1 || res>value2) {
-        res=confirm(text,value_def);
-        setTimeout(res=value_def, 2000);
     }
 }
