@@ -23,8 +23,9 @@ function onChange(event) {
 function onSelectDate(event) {
     if (event.target.name == "birthDate") {
         let year=(event.target.value).split("-");
+        let current_year=new Date().getFullYear();
 
-        if (year[0]<1950 || year[0]>2022) {            
+        if (year[0]<1950 || year[0]>current_year) {            
             
             modalWindow.style.display='block';
             event.target.value=''
