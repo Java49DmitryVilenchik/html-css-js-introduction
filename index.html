@@ -18,7 +18,7 @@
         <div class="date-label">
             <label>Enter birthDate</label>
         
-        <input type="date" name="birthDate" required placeholder="birthdate">
+        <input id="dateyear" type="date" name="birthDate" required placeholder="birthdate" onchange="onSelectDate(event)">
         </div>
         <div class="two-inputs">
         <select name="department" required>
@@ -31,7 +31,7 @@
             <option value="Audit">Audit</option>
 
         </select> 
-        <input type="number" name="salary" placeholder="enter salary" required onchange="onChange(event)" onent>
+        <input type="number" name="salary" placeholder="enter salary" required onchange="onChange(event)">
         </div>
         <div class="buttons">
         <button type="submit">Submit</button>
