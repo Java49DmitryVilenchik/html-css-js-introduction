@@ -20,7 +20,7 @@
         
         <input type="date" name="birthDate" required placeholder="birthdate">
         </div>
-
+        <div class="two-inputs">
         <select name="department" required>
             <option value hidden selected disabled>
                 --Select Department--
@@ -32,9 +32,11 @@
 
         </select> 
         <input type="number" name="salary" placeholder="enter salary" required onchange="onChange(event)">
+        </div>
+        <div class="buttons">
         <button type="submit">Submit</button>
         <button type="reset">Reset</button>
-
+        </div>   
     </form>
            
     <script src="src/form.js"></script>
