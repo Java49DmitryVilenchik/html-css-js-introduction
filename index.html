@@ -4,35 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/style.css">
-    <title>Movies</title>
+    <link rel="stylesheet" href="style/form.css">
+    <title>Form</title>
 </head>
-<body class="bdy" style="overflow: visible;">
-    <div class="fixblock">
-    <div><button onclick="show(0)">Show All Movies</button></div>
-    <div><button onclick="show(1)">Show Most Popular Movie</button></div>
-    <div><button onclick="show(2)">Show Least Popular Movie</button></div>
-    </div>
-    <section hidden>
-        <ul class="movies-list">
+<body>
+    <form id="emloyee-form" onsubmit="onSubmit(event)" class="form-class">
+        <div class="two-inputs">
 
-        </ul>
+        
+        <input type="text" name="employee_name" required placeholder="Enter employee name">
+        <input type="email" name="email" placeholder="Enter email" required>
+        </div>
+        <div class="date-label">
+            <label>Enter birthDate</label>
+        
+        <input type="date" name="birthDate" required placeholder="birthdate">
+        </div>
 
-    </section>
-    <section hidden>
+        <select name="department" required>
+            <option value hidden selected disabled>
+                --Select Department--
+            </option>
+            <option value="QA">QA</option>
+            <option value="Development">Development</option>
+            <option value="Managment">Managment</option>
+            <option value="Audit">Audit</option>
 
-        <label class="text-most-popular"></label>
-        <!--<img class="movies-most-popular"> -->
+        </select> 
+        <input type="number" name="salary" placeholder="enter salary" required onchange="onChange(event)">
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
 
-    </section>
-    <section hidden>
-
-        <label class="text-min-popular"></label>
-        <!--<img class="movies-min-popular"> -->
-
-
-    </section>
+    </form>
            
-    <script src="src/movies.js"></script>
+    <script src="src/form.js"></script>
 </body>
 </html>
