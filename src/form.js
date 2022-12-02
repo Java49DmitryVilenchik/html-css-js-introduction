@@ -1,5 +1,6 @@
 const inputElements=document.querySelectorAll(".form-class [name]");
 const modalWindow=document.getElementById("myModal");
+const errorMessage=document.querySelector(".message");
 
 function onSubmit(event) {
     event.preventDefault();
@@ -16,7 +17,9 @@ function onChange(event) {
             
             modalWindow.style.display='block';
             event.target.value='';
+            errorMessage.innerHTML="Error! The salary must to be more than 1000 and less than 40000!"
             setTimeout(function(){modalWindow.style.display='none';}, 5000);
+            //errorMessage.innerHTML="";
            
         }
     }
@@ -30,7 +33,9 @@ function onChangeDate(event) {
             
             modalWindow.style.display='block';
             event.target.value='';
+            errorMessage.innerHTML="Error! The year must to be more than 1950!"
             setTimeout(function(){modalWindow.style.display='none';}, 5000);
+            //errorMessage.innerHTML="";
         }
     }
 }
