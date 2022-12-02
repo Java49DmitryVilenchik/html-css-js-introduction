@@ -15,12 +15,8 @@ function onChange(event) {
     if (event.target.name == "salary") {
         if (+event.target.value<1000 || +event.target.value>40000) {
             
-            modalWindow.style.display='block';
-            event.target.value='';
-            errorMessage.innerHTML="Error! The salary must to be more than 1000 and less than 40000!"
-            setTimeout(function(){modalWindow.style.display='none';}, 5000);
-            //errorMessage.innerHTML="";
-           
+            errorMsg(event, "Error! The salary must to be more than 1000 and less than 40000!");
+            
         }
     }
 }
@@ -31,11 +27,14 @@ function onChangeDate(event) {
 
         if (year[0]<1950 || year[0]>current_year) {            
             
-            modalWindow.style.display='block';
-            event.target.value='';
-            errorMessage.innerHTML="Error! The year must to be more than 1950!"
-            setTimeout(function(){modalWindow.style.display='none';}, 5000);
-            //errorMessage.innerHTML="";
+            errorMsg(event, "Error! The year must to be more than 1950 and less then 2022!");
+                        
         }
     }
+}
+function errorMsg(event, text) {
+    modalWindow.style.display='block';
+    event.target.value='';
+    errorMessage.innerHTML=text;
+    setTimeout(function(){modalWindow.style.display='none';}, 5000);
 }
