@@ -9,6 +9,6 @@ Rectangle.prototype.perimeter=function() {
     return this.width*2+this.height*2;
 }
 const rectangle=new Rectangle(3,5);
-console(rectangle.square());
-console(rectangle.perimeter());
+console.log(rectangle.square());
+console.log(rectangle.perimeter());
 //re.displ();
