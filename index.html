@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="styles/form.css">
+</head>
+
+<body>
+    <header class="form-title">
+        Employee Form
+    </header>
+    <form id="employee_form" onsubmit="onSubmit(event)" class="form-class">
+        <div class="two-inputs">
+            <input type="text" name="employee_name" required placeholder="Enter employee name">
+            <input type="email" name="email" placeholder="Enter email" required>
+        </div>
+        <div class="date-label">
+            <label >Enter birthdate</label>
+            <input type="date"  name="birthDate"  required onchange="onChange(event)">
+            
+        </div>
+        <p id="date_error" class="error"></p>
+        <div class="two-inputs">
+            <select name="department" required>
+                <option value hidden selected disabled>
+                    --Select Department--
+                </option>
+                <option value="QA">QA</option>
+                <option value="Development">Development</option>
+                <option value="Management">Management</option>
+                <option value="Audit">Audit</option>
+            </select>
+            <input type="number" name="salary" placeholder="Enter salary"
+             onchange="onChange(event)" required>
+             
+        </div>
+        <p id="salary_error" class="error"></p> 
+        <div class="buttons">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+            <button type="button" onclick="closeFormAddEmployee(event)">Close form add emlployee</button>
+        </div>
+
+
+
+    </form>
+    <div class="generals-buttons">
+        <button type="button" onclick="addEmployee(event)">Add Employee</button>
+        <button type="button" onclick="showAllEmployes(event)">Show all employees</button>
+        <button type="button" >Show Employees by salary</button>
+    </div>
+    <script src="src/form.js"></script>
+</body>
+
+</html>
