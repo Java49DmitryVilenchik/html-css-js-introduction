@@ -13,31 +13,37 @@ const generalsButtons = document.querySelector(".generals-buttons");
 const formClass= document.querySelector(".form-class");
 
 const ulElement=document.querySelector(".list-employees");
-const sectionElements = document.querySelectorAll(".list");
+const sectionElements = document.querySelectorAll("section");
 
 const elementName=document.querySelector(".element-name");
 const elementSalary=document.querySelector(".element-salary");
 const elementAge=document.querySelector(".element-age");
 
-//ulElement.innerHTML = getEmployes();
-//function getEmployes() {
-//    let allEmp=company.employees;
-//    const RES=allEmp.map(element =>
-//        elementName.innerHTML=element.employee_name
-//        );
-//        return RES.join('');
-//}
-//function show(index) {
-//    sectionElements.forEach(section => section.hidden = true);
-//    sectionElements[index].hidden = false;
-//}
+
+function getEmployes() {
+    let AAA=company.getAllEmployees();    
+    elementName.innerHTML=AAA[0].employee_name;
+    
+    }        
 function showAllEmployes(event) {    
     event.preventDefault();
     console.log(company.getAllEmployees()); 
+    console.log(company);
 
-    elementName.innerHTML=company.getAllEmployees()[0].employee_name;
-    //sectionElements.forEach(section => section.hidden = true);
-    //sectionElements.hidden = false;    
+    let AAA=company.getAllEmployees();
+   // elementName.innerHTML=getEmployes();
+    
+    
+    for (let i=0; i<AAA.length; i++) {
+        console.log(i);
+        console.log(AAA[i].employee_name);
+        //elementName.innerHTML=AAA[i].employee_name;        
+    }      
+          
+    elementName.innerHTML=AAA[0].employee_name;
+    //elementName.innerHTML=company.getAllEmployees()[1].employee_name; 
+
+       
 }
 
 function closeFormAddEmployee(event) {
@@ -63,7 +69,7 @@ function onSubmit(event) {
     )
     console.log(employee)
     company.hireEmployee(employee);
-    console.log(company);
+    console.log(company.getAllEmployees());
 
     return company;
     
