@@ -12,16 +12,34 @@ const salaryErrorElement = document.getElementById("salary_error");
 const generalsButtons = document.querySelector(".generals-buttons");
 const formClass= document.querySelector(".form-class");
 
-const listElements=document.querySelectorAll(".list-employees");
+const ulElement=document.querySelector(".list-employees");
+const sectionElements = document.querySelectorAll(".list");
+
 const elementName=document.querySelector(".element-name");
 const elementSalary=document.querySelector(".element-salary");
 const elementAge=document.querySelector(".element-age");
 
+//ulElement.innerHTML = getEmployes();
+//function getEmployes() {
+//    let allEmp=company.employees;
+//    const RES=allEmp.map(element =>
+//        elementName.innerHTML=element.employee_name
+//        );
+//        return RES.join('');
+//}
+//function show(index) {
+//    sectionElements.forEach(section => section.hidden = true);
+//    sectionElements[index].hidden = false;
+//}
 function showAllEmployes(event) {    
     event.preventDefault();
-    console.log(company.getAllEmployees());     
-    
+    console.log(company.getAllEmployees()); 
+
+    elementName.innerHTML=company.getAllEmployees()[0].employee_name;
+    //sectionElements.forEach(section => section.hidden = true);
+    //sectionElements.hidden = false;    
 }
+
 function closeFormAddEmployee(event) {
     formClass.style.display='none';
     event.target='';
