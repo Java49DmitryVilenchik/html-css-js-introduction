@@ -7,6 +7,7 @@ const TIME_OUT_ERROR_MESSAGE = 5000;
 const ERROR_CLASS = "error";
 const company = new Company();
 
+
 const dateErrorElement = document.getElementById("date_error");
 const salaryErrorElement = document.getElementById("salary_error");
 const generalsButtons = document.querySelector(".generals-buttons");
@@ -15,32 +16,57 @@ const formClass= document.querySelector(".form-class");
 const ulElement=document.querySelector(".list-employees");
 const sectionElements = document.querySelectorAll("section");
 
-const elementName=document.querySelector(".element-name");
-const elementSalary=document.querySelector(".element-salary");
-const elementAge=document.querySelector(".element-age");
+function showBySalary(event) {
+    event.preventDefault();
+    let from=prompt("Salary from", 10000);
+    let to=prompt("Salary to", 11000);
+   
+    let AAA=company.getAllEmployees();
+    //let filt=AAA.filter(function(i){
+    //    return AAA[i].salary>from;
+    //})
+    //console.log(filt);
+    //console.log(company.getAllEmployees());
+    //
+    for (let i=0; i<AAA.length; i++) {
+        if (AAA[i].salary>from && AAA[i].salary<to) {console.log(AAA[i].salary)}
+       //if (AAA[i].salary>from && AAA[i].salary<to) {console.log(AAA[i].employee_name)}
+                
+    }      
+}
 
-
-function getEmployes() {
-    let AAA=company.getAllEmployees();    
-    elementName.innerHTML=AAA[0].employee_name;
-    
+function getEmployesAllList() {
+    let emplall=company.getAllEmployees();
+    const arrayempl=emplall.map(move=>        
+        `
+        <div class="content">
+        <label class="name">Name: ${move.employee_name}</label>
+        <label class="email">EMail: ${move.email}</label>
+        <label class="department">Department: ${move.department}</label>
+        <label class="birthday">Birthday: ${move.birthDate}</label>
+        <label class="salary">Salary: ${move.salary}</label>
+        </div>
+        
+        `);  
+    return arrayempl.join('');  
     }        
 function showAllEmployes(event) {    
     event.preventDefault();
-    console.log(company.getAllEmployees()); 
-    console.log(company);
+    ulElement.innerHTML=getEmployesAllList();
+    //console.log(company.getAllEmployees()); 
+    //console.log(company);
 
-    let AAA=company.getAllEmployees();
+    //let AAA=company.getAllEmployees();
    // elementName.innerHTML=getEmployes();
     
     
-    for (let i=0; i<AAA.length; i++) {
-        console.log(i);
-        console.log(AAA[i].employee_name);
+    //for (let i=0; i<AAA.length; i++) {
+    //    console.log(i);
+    //    console.log(AAA[i].employee_name);
         //elementName.innerHTML=AAA[i].employee_name;        
-    }      
+    //}      
           
-    elementName.innerHTML=AAA[0].employee_name;
+    //elementName.innerHTML=AAA[0].employee_name;
     //elementName.innerHTML=company.getAllEmployees()[1].employee_name; 
 
        
@@ -124,5 +150,8 @@ Company.prototype.getAllEmployees = function(){
     return this.employees;
 }
 Company.prototype.getEmployeesBySalary = function(salaryFrom, salaryTo) {
-    //TODO
+    let filtrSalary=this.employees.filter(function(salary){
+        return (salary>salaryFrom) && (salary<salaryTo);
+    })
+    return filtrSalary;
 }
