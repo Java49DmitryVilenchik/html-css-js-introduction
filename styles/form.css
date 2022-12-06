@@ -14,6 +14,9 @@ body, html {
     align-items: center;
     flex-grow: 1;
 }
+.list-employees {
+    display: block;
+}
 .two-inputs {
     display: flex;
     justify-content: space-around;

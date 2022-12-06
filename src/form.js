@@ -12,10 +12,15 @@ const salaryErrorElement = document.getElementById("salary_error");
 const generalsButtons = document.querySelector(".generals-buttons");
 const formClass= document.querySelector(".form-class");
 
+const listElements=document.querySelectorAll(".list-employees");
+const elementName=document.querySelector(".element-name");
+const elementSalary=document.querySelector(".element-salary");
+const elementAge=document.querySelector(".element-age");
+
 function showAllEmployes(event) {    
     event.preventDefault();
-    console.log(company);
-    console.log(company.getAllEmployees());
+    console.log(company.getAllEmployees());     
+    
 }
 function closeFormAddEmployee(event) {
     formClass.style.display='none';
