@@ -18,23 +18,31 @@ const sectionElements = document.querySelectorAll("section");
 
 function showBySalary(event) {
     event.preventDefault();
+    
     let from=prompt("Salary from", 10000);
-    let to=prompt("Salary to", 11000);
-   
-    let AAA=company.getAllEmployees();
-    //let filt=AAA.filter(function(i){
-    //    return AAA[i].salary>from;
-    //})
-    //console.log(filt);
-    //console.log(company.getAllEmployees());
-    //
-    for (let i=0; i<AAA.length; i++) {
-        if (AAA[i].salary>from && AAA[i].salary<to) {console.log(AAA[i].salary)}
-       //if (AAA[i].salary>from && AAA[i].salary<to) {console.log(AAA[i].employee_name)}
-                
-    }      
+    let to=prompt("Salary to", 10000);
+    if (from>to) {alert("From > TO !!!");} else
+    {ulElement.innerHTML=getEmployesAllListBySalary(from, to);}
+        
 }
-
+function getEmployesAllListBySalary(from, to) {
+    let sortBySalary=company.getAllEmployees();
+    const arrayBySalary=sortBySalary.map((move) =>{ 
+        if (move.salary>=from && move.salary<=to) {
+        return `
+        <div class="content">
+        <label class="name">Name: ${move.employee_name}</label>
+        <label class="email">EMail: ${move.email}</label>
+        <label class="department">Department: ${move.department}</label>
+        <label class="birthday">Birthday: ${move.birthDate}</label>
+        <label class="salary">Salary: ${move.salary}</label>
+        </div>        
+        `}}
+            
+        );
+            
+    return arrayBySalary.join('');
+}
 function getEmployesAllList() {
     let emplall=company.getAllEmployees();
     const arrayempl=emplall.map(move=>        
@@ -52,23 +60,7 @@ function getEmployesAllList() {
     }        
 function showAllEmployes(event) {    
     event.preventDefault();
-    ulElement.innerHTML=getEmployesAllList();
-    //console.log(company.getAllEmployees()); 
-    //console.log(company);
-
-    //let AAA=company.getAllEmployees();
-   // elementName.innerHTML=getEmployes();
-    
-    
-    //for (let i=0; i<AAA.length; i++) {
-    //    console.log(i);
-    //    console.log(AAA[i].employee_name);
-        //elementName.innerHTML=AAA[i].employee_name;        
-    //}      
-          
-    //elementName.innerHTML=AAA[0].employee_name;
-    //elementName.innerHTML=company.getAllEmployees()[1].employee_name; 
-
+    ulElement.innerHTML=getEmployesAllList();    
        
 }
 
@@ -149,9 +141,9 @@ Company.prototype.hireEmployee = function(employee) {
 Company.prototype.getAllEmployees = function(){
     return this.employees;
 }
-Company.prototype.getEmployeesBySalary = function(salaryFrom, salaryTo) {
-    let filtrSalary=this.employees.filter(function(salary){
-        return (salary>salaryFrom) && (salary<salaryTo);
-    })
-    return filtrSalary;
-}
+//Company.prototype.getEmployeesBySalary = function(salaryFrom, salaryTo) {
+//    if (this.salary>=salaryFrom && this.salary<=salaryTo) {
+//        return this.employees;
+
+//    }   
+//}
