@@ -19,8 +19,8 @@ const sectionElements = document.querySelectorAll("section");
 function showBySalary(event) {
     event.preventDefault();
     
-    let from=prompt("Salary from", 10000);
-    let to=prompt("Salary to", 10000);
+    let from=+prompt("Salary from", 10000);
+    let to=+prompt("Salary to", 10000);
     if (from>to) {alert("From > TO !!!");} else
     {ulElement.innerHTML=getEmployesAllListBySalary(from, to);}
         
