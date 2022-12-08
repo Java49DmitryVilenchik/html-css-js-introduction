@@ -1,3 +1,4 @@
+import { Company } from "./data/company.js";
 const inputElements = document.querySelectorAll(".form-class [name]");
 const MIN_SALARY = 1000;
 const MAX_SALARY = 40000;
@@ -72,19 +73,7 @@ function getMaxYear() {
 }
 /************************************************************* */
 //functions of Company
-function Company() {
-    this.employees = [];
-}
-Company.prototype.hireEmployee = function(employee) {
-    employee.salary = +employee.salary;
-    this.employees.push(employee);
-}
-Company.prototype.getAllEmployees = function(){
-    return this.employees;
-}
-Company.prototype.getEmployeesBySalary = function(salaryFrom, salaryTo) {
-    return this.employees.filter(e => e.salary >= salaryFrom && e.salary < salaryTo )
-}
+
 /********************************************************************************** */
 
 //functions of Salary Form
@@ -139,3 +128,9 @@ function getEmployeeItems(employees) {
           </li>`).join('');
 }
 
+window.onChange=onChange;
+window.showSection=showSection;
+window.onChangeSalaryTo=onChangeSalaryTo;
+window.onChangeSalaryFrom=onChangeSalaryFrom;
+window.onSubmitSalary=onSubmitSalary;
+window.onSubmit=onSubmit;
