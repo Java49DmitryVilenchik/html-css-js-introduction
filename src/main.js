@@ -13,6 +13,7 @@ const dateErrorElement = document.getElementById("date_error");
 const pageErrorElement = document.getElementById("page_error");
 const pageFormErrorElement = document.getElementById("page_form_error");
 const booksListElement = document.getElementById("books-all");
+const bookAuthorListElement=document.getElementById("book-author");
 const bookPageListElement = document.getElementById("book-pages");
 const sectionsElement = document.querySelectorAll("section");
 const buttonsMenuElement = document.querySelectorAll(".buttons-menu *");
@@ -77,16 +78,22 @@ function getMaxYear() {
 /********************************************************************************** */
 
 //functions of Book Form
+let author='';
+function onSubmitAuthor(event) {
+    event.preventDefault();
+    author=event.target.value;
+    const books=library.getAuthorBooks(author);  //const bookAuthorListElement=getElementById("book-author"); 
+    bookAuthorListElement.innerHTML=getBookItems(books);
+    console.log(books);//--
+}
 
 let pageFrom = 50;
 let pageTo = 2000;
 function onSubmitPage(event) {
     event.preventDefault();
     const books = library.getBooksByPage(pageFrom, pageTo);
-    bookPageListElement.innerHTML = getBookItems(books);
-
-
-   
+    bookPageListElement.innerHTML = getBookItems(books); //getElementById("book-pages");
+    console.log(books);//--
 }
 function onChangePagesFrom(event) {
     const value = +event.target.value;
@@ -106,8 +113,8 @@ function onChangePagesTo(event) {
     pageTo = value;
 }
 function showSection(index) {
-    buttonsMenuElement.forEach(e => e.classList.remove(ACTIVE));
-    sectionsElement.forEach(e => e.hidden = true)
+    buttonsMenuElement.forEach(e => e.classList.remove(ACTIVE)); // buttonsMenuElement = document.querySelectorAll(".buttons-menu *");
+    sectionsElement.forEach(e => e.hidden = true); //const sectionsElement = document.querySelectorAll("section");
     buttonsMenuElement[index].classList.add(ACTIVE);
     sectionsElement[index].hidden = false;
     if (index == 1) {
@@ -133,4 +140,5 @@ window.showSection=showSection;
 window.onChangePagesTo=onChangePagesTo;
 window.onChangePagesFrom=onChangePagesFrom;
 window.onSubmitPage=onSubmitPage;
+window.onSubmitAuthor=onSubmitAuthor;
 window.onSubmit=onSubmit;

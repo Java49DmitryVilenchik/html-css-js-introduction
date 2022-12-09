@@ -13,8 +13,8 @@
     <div class="buttons-menu">
         <button onclick="showSection(0)" class="btn-menu">Add new book</button>
         <button onclick="showSection(1)" class="btn-menu">Show all books</button>
-        <button onclick="showSection(2)" class="btn-menu">Show books by number pages...</button>
-        <button onclick="showSection(3)" class="btn-menu">Show books written by...</button>
+        <button onclick="showSection(2)" class="btn-menu">Show books written by...</button>
+        <button onclick="showSection(3)" class="btn-menu">Show books by number pages...</button>
     </div>
     <section id="add-book" hidden>
         <header class="form-title">
@@ -56,6 +56,22 @@
     </section>
     <section id="show-all-books" hidden>
         <ul class="books-list" id="books-all">
+
+        </ul>
+    </section>
+    <section id="show-author-books" hidden>
+        <form id="author-form" class="author-class" onsubmit="onSubmitAuthor(event)">
+            <div class="author-input">
+                <input type="text" name="pageAuthor" placeholder="Enter Author" required>
+                
+            </div>
+            <div class="buttons">
+                <button type="submit">Search</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+        
+        <ul class="books-list" id="book-author">
 
         </ul>
     </section>
