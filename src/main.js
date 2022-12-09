@@ -76,14 +76,14 @@ function getMaxYear() {
 
 /********************************************************************************** */
 
-//functions of Salary Form
+//functions of Book Form
 
-let pageFrom = 0;
-let pageTo = 0;
+let pageFrom = 50;
+let pageTo = 2000;
 function onSubmitPage(event) {
     event.preventDefault();
     const books = library.getBooksByPage(pageFrom, pageTo);
-    bookPageListElement.innerHTML = getBookItems(employees);
+    bookPageListElement.innerHTML = getBookItems(books);
 
 
    
