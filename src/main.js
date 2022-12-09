@@ -77,19 +77,19 @@ function getMaxYear() {
 
 /********************************************************************************** */
 
-//functions of Book Form
+
 let author='';
 function onSubmitAuthor(event) {
     event.preventDefault();
     
-    const books=library.getAuthorBooks(author);  //const bookAuthorListElement=getElementById("book-author"); 
+    const books=library.getAuthorBooks(author);   
     bookAuthorListElement.innerHTML=getBookItems(books);
-    console.log(books);//--
+    console.log(books);
 }
 function onChangeAuthor(event) {
     const value=event.target.value;
-    if (value=='') {alarm('enter author')}
-    else {author=value;}
+    if (value!='') {author=value;}
+    
 }
 
 let pageFrom = 50;
@@ -118,8 +118,8 @@ function onChangePagesTo(event) {
     pageTo = value;
 }
 function showSection(index) {
-    buttonsMenuElement.forEach(e => e.classList.remove(ACTIVE)); // buttonsMenuElement = document.querySelectorAll(".buttons-menu *");
-    sectionsElement.forEach(e => e.hidden = true); //const sectionsElement = document.querySelectorAll("section");
+    buttonsMenuElement.forEach(e => e.classList.remove(ACTIVE)); 
+    sectionsElement.forEach(e => e.hidden = true); 
     buttonsMenuElement[index].classList.add(ACTIVE);
     sectionsElement[index].hidden = false;
     if (index == 1) {
