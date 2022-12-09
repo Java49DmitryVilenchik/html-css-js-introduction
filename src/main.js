@@ -97,7 +97,7 @@ let pageTo = 2000;
 function onSubmitPage(event) {
     event.preventDefault();
     const books = library.getBooksByPage(pageFrom, pageTo);
-    bookPageListElement.innerHTML = getBookItems(books); //getElementById("book-pages");
+    bookPageListElement.innerHTML = getBookItems(books); 
     console.log(books);//--
 }
 function onChangePagesFrom(event) {
