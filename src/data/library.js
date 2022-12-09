@@ -9,8 +9,8 @@ Library.prototype.getAllBooks = function(){
     return this.books;
 }
 Library.prototype.getBooksByPage = function(pageFrom, pageTo) {
-    return this.books.filter(e => e.page >= pageFrom && e.page < pageTo )
+    return this.books.filter(e => e.page >= pageFrom && e.page <= pageTo )
 }
-Library.prototype.getAuthorBooks = function(a) {
-    return this.books.filter(e => e.author==a)
+Library.prototype.getAuthorBooks = function(author) {
+    return this.books.filter(e => e.author==author)
 }

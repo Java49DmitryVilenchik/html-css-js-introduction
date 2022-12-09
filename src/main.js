@@ -81,10 +81,15 @@ function getMaxYear() {
 let author='';
 function onSubmitAuthor(event) {
     event.preventDefault();
-    author=event.target.value;
+    
     const books=library.getAuthorBooks(author);  //const bookAuthorListElement=getElementById("book-author"); 
     bookAuthorListElement.innerHTML=getBookItems(books);
     console.log(books);//--
+}
+function onChangeAuthor(event) {
+    const value=event.target.value;
+    if (value=='') {alarm('enter author')}
+    else {author=value;}
 }
 
 let pageFrom = 50;
@@ -141,4 +146,5 @@ window.onChangePagesTo=onChangePagesTo;
 window.onChangePagesFrom=onChangePagesFrom;
 window.onSubmitPage=onSubmitPage;
 window.onSubmitAuthor=onSubmitAuthor;
+window.onChangeAuthor=onChangeAuthor;
 window.onSubmit=onSubmit;
