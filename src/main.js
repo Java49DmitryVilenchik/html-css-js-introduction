@@ -21,51 +21,8 @@ const sectionsElement = document.querySelectorAll("section");
 const buttonsMenuElement = document.querySelectorAll(".buttons-menu *");
 /************************************************************************** */
 //functions of Book Form
-function onSubmit(event) {
-    event.preventDefault();
-    console.log("submitted");
-    const book = Array.from(inputElements).reduce(
-        (res, cur) => {
-            res[cur.name] = cur.value;
-            return res;
-        }, {}
-    )
-    console.log(book)
-    library.hireBook(book);
-    
-}
-function onChange(event) {
-
-    if (event.target.name == "page") {
-        validatePage(event.target)
-    } else if (event.target.name == "publishDate") {
-        validatePublishDate(event.target);
-    }
-}
-function validatePage(element) {
-    const value = +element.value;
-    if (value < MIN_PAGE || value > MAX_PAGE) {
-        const message = value < MIN_PAGE ? `number pages must be ${MIN_PAGE} or greater`
-            : `number pages must be ${MAX_PAGE} or less`;
-        showErrorMessage(element, message, pageErrorElement);
-    }
-
-}
-function validatePublishDate(element) {
-    const value = +element.value.slice(0, 4);
-    if (value < MIN_YEAR || value > maxYear) {
-        const message = value < MIN_YEAR ? `year must be ${MIN_YEAR} or greater`:
-             `year must be ${maxYear} or less`;
-        showErrorMessage(element, message, dateErrorElement) ;    
-
-    }
-
-}
 
 
-function getMaxYear() {
-    return new Date().getFullYear();
-}
 /************************************************************* */
 //functions of Library
 
