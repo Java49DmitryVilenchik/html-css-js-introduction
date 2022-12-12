@@ -1,11 +1,13 @@
 import { Library } from "./data/library.js";
+import { bookForm } from "./ui/bookForm.js";
+import { showErrorMessage } from "./ui/errorMessage.js";
+
 const inputElements = document.querySelectorAll(".form-class [name]");
 const MIN_PAGE = 50;
 const MAX_PAGE = 2000;
 const MIN_YEAR = 1980;
 const maxYear = getMaxYear();
-const TIME_OUT_ERROR_MESSAGE = 2000;
-const ERROR_CLASS = "error";
+
 const ACTIVE = "active"
 const library = new Library();
 
@@ -59,15 +61,7 @@ function validatePublishDate(element) {
     }
 
 }
-function showErrorMessage(element, message, errorElement) {
-    element.classList.add(ERROR_CLASS);
-    errorElement.innerHTML = message;
-    setTimeout(() => {
-        element.classList.remove(ERROR_CLASS);
-        element.value = ''; 
-        errorElement.innerHTML = '';
-    }, TIME_OUT_ERROR_MESSAGE);
-}
+
 
 function getMaxYear() {
     return new Date().getFullYear();
