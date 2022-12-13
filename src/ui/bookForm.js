@@ -14,6 +14,7 @@ export class BookForm {
     constructor(params) {
         this.#formElement=document.getElementById(params.idForm);
         this.#inputElements=document.querySelectorAll(`#${params.idForm} [name]`);
+        // or this.#inputElements=document.querySelectorAll("#book_form [name]");
         this.#dateInputElement=document.getElementById(params.idDateInput);
         this.#pageInputElement=document.getElementById(params.idPageInput);
         this.#dateErrorElement=document.getElementById(params.idDateError);
