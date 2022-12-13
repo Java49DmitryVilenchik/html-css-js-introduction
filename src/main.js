@@ -1,5 +1,5 @@
 import { Library } from "./data/library.js";
-import { bookForm } from "./ui/bookForm.js";
+import { BookForm } from "./ui/bookForm.js";
 import { showErrorMessage } from "./ui/errorMessage.js";
 
 
@@ -10,10 +10,10 @@ const MIN_YEAR = 1980;
 const ACTIVE = "active"
 const library = new Library();
 
-const bookform=new bookForm({idForm: "book_form", idDateInput: "date_input", idPageInput: "page_input", 
+const bookForm=new BookForm({idForm: "book_form", idDateInput: "date_input", idPageInput: "page_input", 
     idDateError: "date_error", idPageError: "page_error", minPage: MIN_PAGE, maxPage: MAX_PAGE, minYear: MIN_YEAR});
 
-bookform.addSubmitHandler((book) => library.hireBook(book));
+bookForm.addSubmitHandler((book) => library.hireBook(book));
 
 //const dateErrorElement = document.getElementById("date_error");
 //const pageErrorElement = document.getElementById("page_error");

@@ -1,5 +1,5 @@
 import { showErrorMessage } from "./errorMessage.js";
-export class bookForm {
+export class BookForm {
 
     #formElement;
     #inputElements;
@@ -13,7 +13,7 @@ export class bookForm {
     #maxYear;
     constructor(params) {
         this.#formElement=document.getElementById(params.idForm);
-        this.#inputElements=document.querySelectorAll(`#${params.idForm}[name]`);
+        this.#inputElements=document.querySelectorAll(`#${params.idForm} [name]`);
         this.#dateInputElement=document.getElementById(params.idDateInput);
         this.#pageInputElement=document.getElementById(params.idPageInput);
         this.#dateErrorElement=document.getElementById(params.idDateError);
@@ -27,7 +27,7 @@ export class bookForm {
     addSubmitHandler(processBookFan) {
         this.#formElement.addEventListener("submit", (event) =>{        
         event.preventDefault();
-        console.log("!!! submitted !!!");
+        console.log("submitted");
         const book = Array.from(this.#inputElements).reduce(
             (res, cur) => {
                 res[cur.name] = cur.value;
