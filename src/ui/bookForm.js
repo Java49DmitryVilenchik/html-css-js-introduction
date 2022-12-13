@@ -25,17 +25,16 @@ export class bookForm {
         this.onChange();
     }
     addSubmitHandler(processBookFan) {
-        this.#formElement.addEventListener("submit", (event) =>{
-
-        
+        this.#formElement.addEventListener("submit", (event) =>{        
         event.preventDefault();
-        console.log("submitted");
+        console.log("!!! submitted !!!");
         const book = Array.from(this.#inputElements).reduce(
             (res, cur) => {
                 res[cur.name] = cur.value;
                 return res;
             }, {}
         )
+        
         console.log(book);
         processBookFan(book);
     })  
